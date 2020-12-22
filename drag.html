@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Happay</title>
+<style type ="text/css">
+#div1  {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script>
+function allowDrop(en)
+{
+	en.preventDefault();
+}
+function drag(en)
+{
+	en.dataTransfer.setData("Text",en.target.id);
+}
+function drop(en)
+{
+	en.preventDefault();
+	var data=en.dataTransfer.getData("Text");
+	en.target.appendChild(document.getElementById(data));
+}
+
+</script>
+</head>
+
+<body>
+
+<p>拖放RUNOOB.COM 图片到矩形框中:</p>
+<div id="div1" ondrop="drop(event)"  ondragover="allowDrop(event)"></div>
+<br>
+<image id="drag1"  src="IMAGES/TMP/logo.png"  draggable="true"  ondragstart="drag(event)"  width ="336" height ="69"> 
+<p>
+<img src="IMAGES/imagedogs/0.jpg"/>
+</p>
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+
+<p>请仅仅把标题标签用于标题文本。不要仅仅为了产生粗体文本而使用它们。请使用其它标签或 CSS 代替。</p>
+<p>
+<img src="IMAGES/imagedogs/1.jpg"/>
+
+</p>
+</body>
+</html>

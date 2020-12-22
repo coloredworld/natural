@@ -1,0 +1,21 @@
+{
+"name":"web list",
+"createtime":"2020-12-21 14:07:59",
+"createby":"Gordon",
+"note":"user can edit this json file",
+
+"weblist":[
+    {
+        "name_ch":"百度",
+        "name_en":"baidu",
+        "url":"http://www.baidu.com"
+    },
+    {
+        "name_ch":"新浪",
+        "name_en":"xinlang",
+        "url":"https://www.sina.com.cn/"
+
+    }  
+]
+
+}

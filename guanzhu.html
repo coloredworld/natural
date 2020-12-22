@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Wellcome</title>    
+    <!--script type="text/javascript" src="js/jquery-2.1.4.min.js"></script-->
+    <script>
+        window.onload=function(){
+            var url="json/index.json"
+            var request = new XMLHttpRequest();
+            request.open("get",url);
+            request.send(null);
+            request.onload=function(){
+                if(request.status==200){
+                    var json =JSON.parse(request.responseText);
+                    //console.log(json); 
+                    var ol = document.getElementById('ol');
+                    json.person.map(person =>{
+                        var my="";
+                        var li =document.createElement("li");
+                        //"http://www.baidu.com"
+                         li.innerHTML="<a href='"+person.url +"'>" + person.name +"</a>" ;
+                        ol.append(li);
+                    })
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <ol id="ol" ><b>网站列表</b></ol>
+
+    <hr color="red" size="3">
+    <a href="concerns/concerns_01.html">我的关注</a>
+    <hr color="red" size="3">
+
+    <div>
+        <!--input type="file" id="files" style="display:none" onchange="import();"/-->
+        <input type="button" id="import" value="导入"/>
+
+    </div>
+
+
+</body>
+</html>
