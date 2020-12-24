@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="../IMAGES/icon/title_black.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../IMAGES/icon/title_orange.ico" type="image/x-icon">
+
+</head>
+<body>
+    <button id="bt1">第一个按钮</button>
+    <button id="bt2">第二个按钮</button>
+    <button id="bt3">第三个按钮</button>
+    <p id="bt_name_click">哪个按钮点击了</p>
+    <script>
+
+        var i=1;
+        while(i<=3){ 
+            document.write("<p>"+i+"</p>");
+            var bt=document.getElementById("bt"+i);
+            bt.onclick=function(){
+                console.log(this);
+                document.getElementById("bt_name_click").innerText=this.innerText;
+            }            
+            i++;          
+        }
+
+    </script>
+</body>
+</html>

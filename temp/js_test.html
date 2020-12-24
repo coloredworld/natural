@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="icon" href="../IMAGES/icon/title_black.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../IMAGES/icon/title_orange.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div ><b>getElementById() 是改变HTML的主要方法, 通过给元素指定id值,就可以进行修改.访问.</b></div>
+    <button type ="button" onclick="document.getElementById('id_show_time').innerHTML=Date()">
+        点击显示时间
+    </button>
+    
+    <p id="id_show_time" >时间区域</p>    
+
+    <p id="demo"></p> 
+    <script>
+    var na="Gordon";
+    console.log(na);
+    function show(n1,n2)
+    {
+        return n2*n1;
+    }
+    document.getElementById("demo").innerHTML=na;//show(3,4);         
+</script>
+    
+</body>
+</html>
