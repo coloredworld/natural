@@ -1,0 +1,29 @@
+body
+{
+    background: #e5eaf1;
+}
+div
+{
+    background: #c8ccc4;
+}
+
+ 
+a:hover /*鼠标放到标签上时显示的颜色*/
+{
+    background-color:pink;
+}
+a:link  /*没有被访问过的颜色*/
+{
+    background-color:rgb(8, 1, 8);
+}
+ 
+a:visited   /*访问过后的链接颜色*/
+{
+    background-color:rgb(191, 226, 93); 
+}
+
+a:active   /*鼠标点中激活后的颜色*/
+{
+    background-color:red;
+}
+ 
