@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMAGES/icon/title_black.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/icon/title_orange.ico" type="image/x-icon">
+   
+    <title>div test</title>
+
+    <style>
+        div
+        {   
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="div0"></div>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <script>
+        for(var i=0;i<3;i++)        // 从新排布div0-div3 的位置.
+        {
+            var div=document.getElementById("div"+i);
+            div.style.top=i*110+"px";
+            div.offsets=0;          // offsets 是新添加的变量.可以给原先没有的对象增加需要的变量.
+            div.onclick=function(){     // 给指定的对象div增加onclick()响应函数.
+                setDivOffset(this);
+            }
+        }
+        // 针对对象_div 的属性的修改函数:
+        function setDivOffset(_div){
+            _div.offsets+=5;
+            _div.style.left=_div.offsets+"px";
+        }
+    </script>
+    
+</body>
+</html>

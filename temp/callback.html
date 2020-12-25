@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call back</title>
+
+
+    <style>
+        div
+        {   top:0px;
+            width: 100px;
+            height:20px;
+            background-color: orange;
+            position: absolute;
+        }
+        p{
+            top:40px;  /*定义距离顶部的绝对尺度*/
+            width: 100px;   /*定义元素的宽度*/
+            height: 20px;   /*定义元素的高度*/
+            background-color: orange;   /*定义元素的背景色*/
+            position: absolute;     /*位置是绝对位置.*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">我有单击事件</div> 
+    <p top:100px position:absolute id="cnt"></p>
+
+    <script>
+
+        // 回调函数;
+        function fn5(o,fn){
+            o.a+=1;
+            fn(o);          // fn()是函数的入口地址.相当于调用了fn6(_o);
+        }
+
+        function fn6(_o){   
+            _o.a+=10;
+        }
+
+        function fn7(_o){
+            _o.a+=20;
+        }
+
+        var obj4={a:1};
+
+
+        fn5(obj4,fn6);      // fn6 传送的是函数的地址
+
+        var  div=document.getElementById("div0");
+        var clickcnt=0;
+        div.addEventListener("click",clickHandler);
+        function clickHandler(e){
+            console.log(this);  // 输出关于this的详细的信息.            
+            var p=document.getElementById("cnt");
+            clickcnt++;
+            p.innerHTML="单击了:"+clickcnt+"次";
+        }
+
+    </script>
+</body>
+</html>
